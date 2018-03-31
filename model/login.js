@@ -7,4 +7,5 @@ var logSchema = new Schema({
 });
 
 var logModel = mongoose.model('login',logSchema);
+
 module.exports = logModel;
