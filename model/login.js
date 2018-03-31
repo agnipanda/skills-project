@@ -6,5 +6,5 @@ var logSchema = new Schema({
 	password: {type:String,required:true}
 });
 
-var logModel = mongoose.model('sign',logSchema);
+var logModel = mongoose.model('login',logSchema);
 module.exports = logModel;
