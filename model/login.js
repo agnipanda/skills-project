@@ -2,8 +2,8 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var logSchema = new Schema({
-	roomid: {type:String,required:true},
-	password: {type:String,required:true}
+	logid: {type:String,required:true},
+	logpass: {type:String,required:true}
 });
 
 var logModel = mongoose.model('login',logSchema);
