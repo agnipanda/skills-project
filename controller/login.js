@@ -7,7 +7,7 @@ var logUser=function(req,res){
 	// var saltRounds = 10;
 	// var hash = bcrypt.hashSync(pw, saltRounds);
 	// logmodel.password = hash;
-  	signModel.findOne({roomid:req.body.logid},function(err,user){
+  	signModel.findOne({regno:req.body.logid},function(err,user){
   		console.log("user="+user);
   		if(err) throw err;
 	      if(user){
@@ -18,7 +18,8 @@ var logUser=function(req,res){
 	              "name" : user.name,
 	              "email" : user.email,
 	              "phone" : user.phone,
-	              "roomid" : user.roomid
+	              "regno" : user.regno,
+	              "gemder" : user.gender
 	            };
 				req.session.user = details;
 				console.log(req.session.user);
@@ -27,18 +28,5 @@ var logUser=function(req,res){
 		  }
 	});
 };
-	 /*signModel.findOne({"roomid":logmodel.roomid},"password",function(err,response){
-	// 	var pw = logmodel.password;
-	// 	var bool = bcrypt.compareSync(pw, res);
-	//bcrypt.compareSync(myPlaintextPassword, hash);
-	console.log(logmodel.password);
-	console.log(response);
-		if(logmodel.password==response){
-			res.send("ok");
-		}
-		else{
-			res.send("not ok");
-		}
-	});*/
 
 module.exports = {"logUser":logUser};

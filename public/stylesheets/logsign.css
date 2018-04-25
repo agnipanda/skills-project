@@ -78,7 +78,7 @@ transition: all 0.5s;
 
 .cont_forms_active_sign_up {
 box-shadow: 1px 10px 30px -10px rgba(0,0,0,0.5);
-  height: 490px;  
+  height: 530px;  
 top:20px;
 left:320px;
 -webkit-transition: all 0.5s;
@@ -118,7 +118,7 @@ top:-80px;
   width: 100%;
 opacity: 0.3;
 animation-name: animar_fondo;
-animation-duration: 20s;
+animation-duration: 5s;
 animation-timing-function: linear;
 animation-iteration-count: infinite;
 animation-direction: alternate;

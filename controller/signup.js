@@ -7,8 +7,9 @@ var signUser=function(req,res){
 			name:req.body.name,
 			email:req.body.email,
 			phone:req.body.phone,
-			roomid:req.body.roomid,
-			password:req.body.password
+			regno:req.body.regno,
+			password:req.body.password,
+			gender:req.body.gender
 		});
 		// var pw = signmodel.password;
 		// var saltRounds = 10;

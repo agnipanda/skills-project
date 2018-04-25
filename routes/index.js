@@ -8,7 +8,6 @@ router.post('/signup',signup.signUser);
 router.post('/login',login.logUser);
 
 router.get('/logsign',function(req, res, next) {
-	console.log("get="+req.session.user)
 	if (req.session.user) {
    		res.redirect('/home');
 } 	else 
@@ -35,13 +34,6 @@ router.get('/issues',function(req,res){
 	if (req.session.user) {
 		var msg=req.session.user;
         res.render('issues', {details:msg});
-} else res.redirect("/logsign");
-});
-
-router.get('/foodhub',function(req,res){
-	if (req.session.user) {
-		var msg=req.session.user;
-        res.render('foodhub', {details:msg});
 } else res.redirect("/logsign");
 });
 
