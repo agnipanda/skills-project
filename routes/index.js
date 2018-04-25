@@ -8,6 +8,14 @@ router.get('/logsign',function(req, res, next) {
 	res.render('logsign',{msg:""});
 });
 
+router.get('/', function(req, res, next) {
+    if(req.session.user){
+      isLoggedIn = true;
+    }
+    else isLoggedIn = false;
+    res.render('./pages/index', {"isLoggedIn" : isLoggedIn});
+});
+
 router.post('/signup',signup.signUser);
 
 router.post('/login',login.logUser);

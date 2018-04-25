@@ -9,7 +9,7 @@ var mongoose = require('mongoose');
 var index = require('./routes/index');
 var users = require('./routes/users');
 var app = express();
-
+var session = require('express-session');
 mongoose.connect('mongodb://localhost:27017/mydb');
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -21,8 +21,8 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(session({path:"/",secret:"bahut secret hai bhaiyya",resave:false,saveUninitialize:false}));
 app.use(express.static(path.join(__dirname, 'public')));
-
 //use views
 app.use('/', index);
 app.use('/users', users);

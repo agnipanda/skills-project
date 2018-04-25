@@ -10,10 +10,10 @@ var signUser=function(req,res){
 			roomid:req.body.roomid,
 			password:req.body.password
 		});
-		var pw = signmodel.password;
-		var saltRounds = 10;
-		var hash = bcrypt.hashSync(pw, saltRounds);
-		signmodel.password = hash;
+		// var pw = signmodel.password;
+		// var saltRounds = 10;
+		// var hash = bcrypt.hashSync(pw, saltRounds);
+		// signmodel.password = hash;
 		signmodel.save(function(err,doc){
 			if(err) res.json(err);
 			res.render('logsign',{msg:'alert("Registered Successfully..!!")'})
