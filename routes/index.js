@@ -53,7 +53,7 @@ router.get('/issues',function(req,res){
 		else{
 			hostel="KCHR"
 		}
-        res.render('issues', {details:msg,hos:hostel});
+        res.render('issues', {msg:"",details:msg,hos:hostel});
 } else res.redirect("/logsign");
 });
 

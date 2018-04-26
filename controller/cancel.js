@@ -20,26 +20,22 @@ var cancelAmount=function(req,res){
 		d+=25;
 	}
 	signModel.findOne({regno:req.session.user.regno},function(err,user){
-		console.log("db_date="+user.date);
-		console.log("cancel="+date2);
 		if(user.date == date2){
 			req.session.mes="Already cancelled..!!"
 			res.redirect('/home');
 		}
 		else{
 			var cd="";
-			if(user.cdate==""){
-				cd=user.cdate;
+			if(user.cdates==" "){
+				cd=date2;
 			}
 			else{
-				cd=user.cdate+'/'+date2;
+				cd=user.cdates+'/'+date2;
 			}
-			console.log("cd"+cd);
 			var t=(user.amount)-(bf+l+d);
 			req.session.user.amount=t;
-			console.log("t=",t);
 			conditions = {regno:req.session.user.regno},
-			update = {$set : {amount:t,date:date2,cdate:cd}},
+			update = {$set : {amount:t,date:date2,cdates:cd}},
 			options = {multi: true};
 		  	signModel.findOneAndUpdate(conditions,update,options,callback);
 		  	function callback (err, numAffected) {

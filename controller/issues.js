@@ -16,17 +16,11 @@ var issueSave = (req,res) => {
     date: Date.now(),
     description: req.body.description
   }
-  console.log(details);
   var issuemodel = new issueModel(details);
-  issuemodel.save()
-    .then(item => {
-      res.send("item saved to the database")
-    })
-    .catch(err => {
-      console.log(err);
-      res.status(400).send("unable to save to database");
+  issuemodel.save(function(err,doc){
+      if(err) res.json(err);
+      res.render('issues', {hos:hostel, msg:'alert("Your complaint has been received")'});
     });
-    res.render('issues', {hos:hostel, msg:'alert("Your complaint has been received")'})
 };
 
 module.exports = {"issueSave":issueSave};

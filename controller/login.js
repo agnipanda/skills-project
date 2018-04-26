@@ -8,7 +8,6 @@ var logUser=function(req,res){
     }
     else{
     signModel.findOne({regno:req.body.logid},function(err,user){
-  		console.log("user="+user);
   		if(err) throw err;
 	      if(user){
 	        //bcrypt.compare(req.body.password,user.password,function(err,isMatch) {
@@ -23,12 +22,12 @@ var logUser=function(req,res){
 	              "amount" : user.amount,
 	            };
 				req.session.user = details;
-				console.log(req.session.user);
 				return res.redirect('/home');
   			  }
   			  
   			  return res.redirect('/logsign');
 		  }
+		return res.redirect('/logsign');
 	});
 }
 };

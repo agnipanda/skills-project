@@ -8,6 +8,7 @@ var signUser=function(req,res){
 		var curr_month = d.getMonth();
 		var curr_year = d.getFullYear();
 		d=curr_date-1 + "-" + m_names[curr_month] + "-" + curr_year;
+		var s=" ";
 		var signmodel = new signModel({
 			name:req.body.name,
 			email:req.body.email,
@@ -17,8 +18,9 @@ var signUser=function(req,res){
 			gender:req.body.gender,
 			amount:10500,
 			date:d,
-			cdate:" "
+			cdates:s
 		});
+		console.log("smodel="+signmodel);
 		// var pw = signmodel.password;
 		// var saltRounds = 10;
 		// var hash = bcrypt.hashSync(pw, saltRounds);
