@@ -2,7 +2,12 @@ var mongoose = require('mongoose');
 var signModel = require('../model/signup');
 
 var logUser=function(req,res){
-  	signModel.findOne({regno:req.body.logid},function(err,user){
+  	if(req.body.logid=="admin" && req.body.logpass=="admin123"){
+      req.session.user = "admin";
+      res.redirect('/admin')
+    }
+    else{
+    signModel.findOne({regno:req.body.logid},function(err,user){
   		console.log("user="+user);
   		if(err) throw err;
 	      if(user){
@@ -24,6 +29,7 @@ var logUser=function(req,res){
   			  }
 		  }
 	});
+}
 };
 
 module.exports = {"logUser":logUser};
