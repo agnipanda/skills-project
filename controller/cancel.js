@@ -27,11 +27,13 @@ var cancelAmount=function(req,res){
 			res.redirect('/home');
 		}
 		else{
+			var cd=user.cdate+'/'+date2;
+			console.log(cd);
 			var t=(user.amount)-(bf+l+d);
 			req.session.user.amount=t;
 			console.log("t=",t);
 			conditions = {regno:req.session.user.regno},
-			update = {$set : {amount:t,date:date2}},
+			update = {$set : {amount:t,date:date2,cdate:cd}},
 			options = {multi: true};
 		  	signModel.findOneAndUpdate(conditions,update,options,callback);
 		  	function callback (err, numAffected) {

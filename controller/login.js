@@ -16,12 +16,13 @@ var logUser=function(req,res){
 	              "regno" : user.regno,
 	              "gender" : user.gender,
 	              "amount" : user.amount,
-	              "date" : user.date
 	            };
 				req.session.user = details;
 				console.log(req.session.user);
-				res.redirect('/home');
+				return res.redirect('/home');
   			  }
+  			  
+  			  return res.redirect('/logsign');
 		  }
 	});
 };

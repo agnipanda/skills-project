@@ -10,7 +10,8 @@ var signSchema = new Schema({
 	password: {type:String,required:true},
 	gender: {type:String},
 	amount: {type:Number},
-	date: {type:String}
+	date: {type:String},
+	cdates: {type:String}
 });
 signSchema.plugin(uniqueValidator);
 var signModel = mongoose.model('sign',signSchema);
