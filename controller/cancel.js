@@ -27,8 +27,14 @@ var cancelAmount=function(req,res){
 			res.redirect('/home');
 		}
 		else{
-			var cd=user.cdate+'/'+date2;
-			console.log(cd);
+			var cd="";
+			if(user.cdate==""){
+				cd=user.cdate;
+			}
+			else{
+				cd=user.cdate+'/'+date2;
+			}
+			console.log("cd"+cd);
 			var t=(user.amount)-(bf+l+d);
 			req.session.user.amount=t;
 			console.log("t=",t);
