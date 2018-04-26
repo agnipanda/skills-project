@@ -472,6 +472,8 @@ hr { border-top: 1px solid #111010; }
 }
 .tm-about-box-1-img {
 	display: block;
+	width: 100px;
+	height: 100px; 
 	margin: 0 auto 30px;
 	border-radius: 50%;
 	border: 5px solid #d4d4d4;

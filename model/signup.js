@@ -8,7 +8,7 @@ var signSchema = new Schema({
 	phone: {type:String,required:true,unique:true},
 	regno: {type:String,required:true,unique:true},
 	password: {type:String,required:true},
-	gender: {type:String,required:true}
+	gender: {type:String}
 });
 signSchema.plugin(uniqueValidator);
 var signModel = mongoose.model('sign',signSchema);

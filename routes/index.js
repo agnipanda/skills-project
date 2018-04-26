@@ -26,7 +26,6 @@ router.get('/logsign',function(req, res, next) {
 router.get('/home',function(req,res){
 	if (req.session.user) {
 		var msg=req.session.user;
-		console.log(req.session.user.gender);
 		if (req.session.user.gender=="Male") {
 			hostel="RHR"
 		}
@@ -40,15 +39,32 @@ router.get('/home',function(req,res){
 router.get('/issues',function(req,res){
 	if (req.session.user) {
 		var msg=req.session.user;
-        res.render('issues', {details:msg});
+		if (req.session.user.gender=="Male") {
+			hostel="RHR"
+		}
+		else{
+			hostel="KCHR"
+		}
+        res.render('issues', {details:msg,hos:hostel});
 } else res.redirect("/logsign");
 });
 
-router.get('/status',function(req,res){
+router.get('/contacts',function(req,res){
 	if (req.session.user) {
 		var msg=req.session.user;
-        res.render('status', {details:msg});
+		if (req.session.user.gender=="Male") {
+			hostel="RHR"
+		}
+		else{
+			hostel="KCHR"
+		}
+        res.render('contacts', {details:msg,hos:hostel});
 } else res.redirect("/logsign");
+});
+
+router.get('/logout',function(req, res, next) {
+	req.session.user=null;
+	res.redirect("/logsign");
 });
 
 module.exports = router;

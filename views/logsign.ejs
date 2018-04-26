@@ -48,23 +48,23 @@
        </div>
   <form action="/login" method="POST">
     <div class="cont_form_login">
-      <a href="#" onclick="ocultar_login_sign_up()" ><i class="material-icons">arrow_back</i></a>
+      <a href="#" onclick="ocultar_login_sign_up()" ><i class="material-icons" style="color: white;">arrow_back</i></a>
       <h2>LOGIN</h2>
-      <input type="text" name="logid" placeholder="Regd No" />
-      <input type="password" name="logpass" placeholder="Password" />
+      <input type="text" name="logid" placeholder="Regd No" required />
+      <input type="password" name="logpass" placeholder="Password" required />
       <input type="submit" class="btn_login" onclick="cambiar_login()" value="LOGIN" />
     </div>
   </form>
   <form action="/signup" method="POST">
     <div class="cont_form_sign_up">
-      <a href="#" onclick="ocultar_login_sign_up()"><i class="material-icons">arrow_back</i></a>
+      <a href="#" onclick="ocultar_login_sign_up()"><i class="material-icons" style="color: white;">arrow_back</i></a>
       <h2>SIGN UP</h2>
       <input type="text" name="name" placeholder="Name" required/>
       <input type="text" name="email" placeholder="Email" required />
       <input type="text" name="phone" placeholder="Phone" required/>
       <input type="text" name="regno" placeholder="Regd No" required/>
       <input type="password" name="password" required>
-      <label style="color: red"> Gender </label>
+      <label style="color: black"> <b>Gender</b> </label>
       <select name="gender" required>
         <option>Male</option>
         <option>Female</option>
