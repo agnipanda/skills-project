@@ -1,6 +1,5 @@
 var mongoose = require('mongoose');
 var signModel = require('../model/signup');
-var bcrypt = require('bcrypt');
 
 var signUser=function(req,res){
 		var signmodel = new signModel({
@@ -9,7 +8,9 @@ var signUser=function(req,res){
 			phone:req.body.phone,
 			regno:req.body.regno,
 			password:req.body.password,
-			gender:req.body.gender
+			gender:req.body.gender,
+			amount:10500,
+			date:Date.now()
 		});
 		// var pw = signmodel.password;
 		// var saltRounds = 10;

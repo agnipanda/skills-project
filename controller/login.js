@@ -1,12 +1,7 @@
 var mongoose = require('mongoose');
 var signModel = require('../model/signup');
-var bcrypt = require('bcrypt');
 
 var logUser=function(req,res){
- 	// var pw = logmodel.password;
-	// var saltRounds = 10;
-	// var hash = bcrypt.hashSync(pw, saltRounds);
-	// logmodel.password = hash;
   	signModel.findOne({regno:req.body.logid},function(err,user){
   		console.log("user="+user);
   		if(err) throw err;
@@ -19,7 +14,8 @@ var logUser=function(req,res){
 	              "email" : user.email,
 	              "phone" : user.phone,
 	              "regno" : user.regno,
-	              "gender" : user.gender
+	              "gender" : user.gender,
+	              "amount" : user.amount
 	            };
 				req.session.user = details;
 				console.log(req.session.user);

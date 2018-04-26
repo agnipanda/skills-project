@@ -51,7 +51,7 @@ http://www.templatemo.com/tm-475-holiday
 		<center>
 		<h1>MEAL STATUS</h1>
 		CURRENT AMOUNT:
-		<div style="width: 80px;height: 30px;border: double;"></div>
+		<div style="width: 80px;height: 30px;border: double;">Rs.<%- details.amount %></div>
 		<br><br>
 		YOUR STATUS:
 		 <p id="para" name="meal status" rows="5" cols="20" placeholder="your status">Lunch:ON</p>
@@ -63,31 +63,31 @@ http://www.templatemo.com/tm-475-holiday
 			<div class="col-lg-4 col-md-4 col-sm-6">
 				<!-- Nav tabs -->
 				<div class="form-group tm-yellow-gradient-bg text-center"> 
-					<h3><span style="position: absolute; left: 70px;top: 30px;"> Next day's meal</span></h3>
+					<h3><span style="position: absolute; left: 70px;top: 30px;">Cancel next day's meal</span></h3>
 				</div> 
 
 				<!-- Tab panes -->
 				<div class="tab-content" text-align="text-center">
 					<div role="tabpanel" class="tab-pane fade in active tm-white-bg" id="hotel">
 						<div class="tm-search-box effect2">
-							<form action="#" method="post" class="hotel-search-form">
+							<form action="/cancel" method="post" class="hotel-search-form">
 								<div class="tm-form-inner">
 									<ol>
 										<li>
 											<label class="container">Breakfast
-									 			<input type="checkbox" checked="checked">
+									 			<input name="breakfast" type="checkbox">
 												<span class="checkmark"></span>
 											</label>
 										</li>
 							 			<li>
 											<label class="container">Lunch
-									 			<input type="checkbox" >
+									 			<input name="lunch" type="checkbox" >
 												<span class="checkmark"></span>
 											</label>
 							 			</li>
 							 			<li>
 										<label class="container">Dinner
-							 				<input type="checkbox">
+							 				<input name="dinner" type="checkbox">
 											<span class="checkmark"></span>
 										</label>
 										</li>

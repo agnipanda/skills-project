@@ -2,10 +2,13 @@ var express = require('express');
 var router = express.Router();
 var signup = require('../controller/signup');
 var login = require('../controller/login');
+var cancel = require('../controller/cancel');
 /* GET home page. */
 router.post('/signup',signup.signUser);
 
 router.post('/login',login.logUser);
+
+router.post('/cancel',cancel.cancelAmount);
 
 router.get('/logsign',function(req, res, next) {
 	if (req.session.user) {
@@ -13,15 +16,6 @@ router.get('/logsign',function(req, res, next) {
 } 	else 
 		res.render('logsign',{msg:"Retry"});
 });
-
-// router.get('/', function(req, res, next) {
-//     if(req.session.user){
-//      	isLoggedIn = true;
-//     }
-//     else 
-//     	isLoggedIn = false;
-//     res.render('index', {"isLoggedIn" : isLoggedIn});
-// });
 
 router.get('/home',function(req,res){
 	if (req.session.user) {
