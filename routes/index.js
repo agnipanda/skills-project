@@ -3,6 +3,7 @@ var router = express.Router();
 var signup = require('../controller/signup');
 var login = require('../controller/login');
 var cancel = require('../controller/cancel');
+var issue = require('../controller/issues')
 /* GET home page. */
 router.post('/signup',signup.signUser);
 
@@ -10,10 +11,12 @@ router.post('/login',login.logUser);
 
 router.post('/cancel',cancel.cancelAmount);
 
+router.post('/issues', issue.issueSave);
+
 router.get('/logsign',function(req, res, next) {
 	if (req.session.user) {
    		res.redirect('/home');
-} 	else 
+} 	else
 		res.render('logsign',{msg:"Retry"});
 });
 
