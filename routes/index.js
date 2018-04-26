@@ -26,7 +26,14 @@ router.get('/logsign',function(req, res, next) {
 router.get('/home',function(req,res){
 	if (req.session.user) {
 		var msg=req.session.user;
-        res.render('home', {details:msg});
+		console.log(req.session.user.gender);
+		if (req.session.user.gender=="Male") {
+			hostel="RHR"
+		}
+		else{
+			hostel="KCHR"
+		}
+        res.render('home', {details:msg,hos:hostel});
 } else res.redirect("/logsign");
 });
 

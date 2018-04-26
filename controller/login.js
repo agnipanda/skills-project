@@ -19,7 +19,7 @@ var logUser=function(req,res){
 	              "email" : user.email,
 	              "phone" : user.phone,
 	              "regno" : user.regno,
-	              "gemder" : user.gender
+	              "gender" : user.gender
 	            };
 				req.session.user = details;
 				console.log(req.session.user);
