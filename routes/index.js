@@ -5,6 +5,15 @@ var login = require('../controller/login');
 var cancel = require('../controller/cancel');
 var issue = require('../controller/issues')
 /* GET home page. */
+
+router.get('/', (req,res) => {
+	res.redirect('/home')
+})
+
+router.get('/admin', (req,res) => {
+	res.render('admin')
+})
+
 router.post('/signup',signup.signUser);
 
 router.post('/login',login.logUser);
