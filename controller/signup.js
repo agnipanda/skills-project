@@ -2,6 +2,12 @@ var mongoose = require('mongoose');
 var signModel = require('../model/signup');
 
 var signUser=function(req,res){
+		var m_names = new Array("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec");
+		var d = new Date();
+		var curr_date = d.getDate();
+		var curr_month = d.getMonth();
+		var curr_year = d.getFullYear();
+		d=curr_date-1 + "-" + m_names[curr_month] + "-" + curr_year;
 		var signmodel = new signModel({
 			name:req.body.name,
 			email:req.body.email,
@@ -10,7 +16,7 @@ var signUser=function(req,res){
 			password:req.body.password,
 			gender:req.body.gender,
 			amount:10500,
-			date:Date.now()
+			date:d
 		});
 		// var pw = signmodel.password;
 		// var saltRounds = 10;

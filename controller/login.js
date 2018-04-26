@@ -15,7 +15,8 @@ var logUser=function(req,res){
 	              "phone" : user.phone,
 	              "regno" : user.regno,
 	              "gender" : user.gender,
-	              "amount" : user.amount
+	              "amount" : user.amount,
+	              "date" : user.date
 	            };
 				req.session.user = details;
 				console.log(req.session.user);

@@ -26,7 +26,9 @@ router.get('/home',function(req,res){
 		else{
 			hostel="KCHR"
 		}
-        res.render('home', {details:msg,hos:hostel});
+		var mes=req.session.mes;
+		req.session.mes=null;
+        res.render('home', {details:msg,hos:hostel,mes:mes});
 } else res.redirect("/logsign");
 });
 
@@ -58,6 +60,7 @@ router.get('/contacts',function(req,res){
 
 router.get('/logout',function(req, res, next) {
 	req.session.user=null;
+	req.session.mes=null;
 	res.redirect("/logsign");
 });
 
