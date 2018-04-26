@@ -20,13 +20,12 @@ var signUser=function(req,res){
 			date:d,
 			cdates:s
 		});
-		console.log("smodel="+signmodel);
 		// var pw = signmodel.password;
 		// var saltRounds = 10;
 		// var hash = bcrypt.hashSync(pw, saltRounds);
 		// signmodel.password = hash;
 		signmodel.save(function(err,doc){
-			if(err) res.json(err);
+			if(err) res.render('logsign',{msg:'alert("Credentials already exists..!!")'})
 			res.render('logsign',{msg:'alert("Registered Successfully..!!")'})
 		});
 };

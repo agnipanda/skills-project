@@ -18,7 +18,7 @@ var issueSave = (req,res) => {
   }
   var issuemodel = new issueModel(details);
   issuemodel.save(function(err,doc){
-      if(err) res.json(err);
+      if(err) res.render('issues', {hos:hostel, msg:'alert("Please fill all the details.")'});
       res.render('issues', {hos:hostel, msg:'alert("Your complaint has been received")'});
     });
 };
