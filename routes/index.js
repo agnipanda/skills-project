@@ -17,6 +17,10 @@ router.post('/issues', issue.issueSave);
 
 router.post('/admin',login.issue);
 
+router.get('/mealcounts',function(req,res){
+	res.render('mealcounts');
+});
+
 router.get('/',function(req,res){
 	res.redirect('/home')
 });
