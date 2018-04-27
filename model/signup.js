@@ -11,7 +11,10 @@ var signSchema = new Schema({
 	gender: {type:String},
 	amount: {type:Number},
 	date: {type:String},
-	cdates: {type:String}
+	cdates: {type:String},
+	bcount: {type:Number},
+	lcount: {type:Number},
+	dcount: {type:Number}
 });
 signSchema.plugin(uniqueValidator);
 var signModel = mongoose.model('sign',signSchema);

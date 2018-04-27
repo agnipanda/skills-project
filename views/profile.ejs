@@ -23,6 +23,17 @@ http://www.templatemo.com/tm-475-holiday
 	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 </head>
+<style type="text/css">
+	.myUl li{
+		height:60px;
+		width:600px;
+		border-style: double;
+		color: yellow;
+		background-color: black;
+		padding-top: 1%;
+		list-style: none;
+	}
+</style>
 <body class="tm-gray-bg">
 	<!-- Header -->
 	<div class="tm-header">
@@ -48,19 +59,17 @@ http://www.templatemo.com/tm-475-holiday
 			</div>
 		</div>
 	</div>
-	 <div id="myDIV" class="header">
-  <h2>My Profile</h2>
-  <input type="text" id="myInput" placeholder="Title...">
-  <span onclick="newElement()" class="addBtn">Add</span>
-</div>
-
-<ul id="myUL">
-	  <li><%- pro.name %></li>
-	  <li class="checked">Pay bills</li>
-	  <li>Meet George</li>
-	  <li>Buy eggs</li>
-	  <li>Read a book</li>
-	  <li>Organize office</li>
-</ul> 
+<center>
+	<div id="myDIV" class="header">
+  		<h2>My Profile</h2>
+	</div>
+	<ul class="myUl">
+		<li><%- pro.name %></li>
+		<li><%- pro.email %></li>
+		<li><%- pro.phone %></li>
+		<li><%- pro.regno %></li>
+		<li><%- pro.gender %></li>
+	</ul>
+</center>
  </body>
  </html>

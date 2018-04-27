@@ -17,13 +17,26 @@ router.post('/issues', issue.issueSave);
 
 router.post('/admin',login.issue);
 
-router.get('/profile',function(res,req){
-	console.log("haha="+req.session.user)
-	res.render('profile',{pro:req.session.user});
+router.post('/fmealcounts',cancel.fcount);
+
+router.post('/mmealcounts',cancel.mcount);
+
+router.get('/profile',function(req,res){
+	if (req.session.user) {
+		var msg=req.session.user;
+		if (req.session.user.gender=="Male") {
+			hostel="RHR"
+		}
+		else{
+			hostel="KCHR"
+		}
+	console.log("haha="+req.session.user);
+	res.render('profile',{hos:hostel,pro:req.session.user});
+	};
 });
 
 router.get('/mealcounts',function(req,res){
-	res.render('mealcounts');
+	res.render('mealcounts',{counts:null});
 });
 
 router.get('/',function(req,res){
@@ -45,7 +58,7 @@ router.get('/logsign',function(req, res, next) {
    		res.redirect('/home');
 	} 	
 	else
-		res.render('logsign',{msg:'alert("Session Expired..!!")'});
+		res.render('logsign',{msg:'alert("Oops!Something went wrong.Please check your credentials!")'});
 });
 
 router.get('/home',function(req,res){

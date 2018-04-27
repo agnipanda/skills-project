@@ -18,7 +18,10 @@ var signUser=function(req,res){
 			gender:req.body.gender,
 			amount:10500,
 			date:d,
-			cdates:s
+			cdates:s,
+			bcount:0,
+			lcount:0,
+			dcount:0
 		});
 		// var pw = signmodel.password;
 		// var saltRounds = 10;

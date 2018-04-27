@@ -46,6 +46,29 @@ http://www.templatemo.com/tm-475-holiday
 			</div>
 		</div>
 	</div>
-	<div style="width: 60%;height: 60%;">560</div>
+	<center>
+		<p><b>TOMORROW'S MEAL COUNT:<b></p>
+		<form action="mmealcounts" method="post">
+			<input type="submit" value="Total meals in RHR">
+		</form>
+		<form action="fmealcounts" method="post">
+			<input type="submit" value="Total meals in KCHR">
+		</form>
+	</center>
+	<% var a=99; %>
+	<% var bc=0; %>
+	<% var lc=0; %>
+	<% var dc=0; %>
+	<% if(counts!=null) {%>
+	<% for(var i=0; i < counts.length; i++) { %>
+	<% bc+=counts[i].bcount; %>
+	<% lc+=counts[i].lcount; %>
+	<% dc+=counts[i].dcount; %>
+	<% } } %>
+	<center>
+		<div style="font-size: 300%;">Breakfast:<%- bc %> </div>
+		<div style="font-size: 300%;">Lunch:    <%- lc %></div>
+		<div style="font-size: 300%;">Dinner:   <%- dc %></div>
+	</center>
  </body>
  </html>
