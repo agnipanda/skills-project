@@ -17,6 +17,11 @@ router.post('/issues', issue.issueSave);
 
 router.post('/admin',login.issue);
 
+router.get('/profile',function(res,req){
+	console.log("haha="+req.session.user)
+	res.render('profile',{pro:req.session.user});
+});
+
 router.get('/mealcounts',function(req,res){
 	res.render('mealcounts');
 });

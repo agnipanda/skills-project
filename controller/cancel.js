@@ -13,15 +13,15 @@ var cancelAmount=function(req,res){
 	date2=curr_date + "-" + m_names[curr_month] + "-" + curr_year;
 	if(c.breakfast){
 		bf+=25;
-		bs="OFF"
+		bs="OFF";
 	}
 	if(c.lunch){
 		l+=25;
-		ls="OFF"
+		ls="OFF";
 	}
 	if(c.dinner){
 		d+=25;
-		ds="OFF"
+		ds="OFF";
 	}
 	signModel.findOne({regno:req.session.user.regno},function(err,user){
 		if(user.date == date2){

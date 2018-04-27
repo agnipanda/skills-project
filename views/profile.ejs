@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Admin</title>
+<title><%- hos %></title>
 <!--
 Holiday Template
 http://www.templatemo.com/tm-475-holiday
@@ -29,16 +29,18 @@ http://www.templatemo.com/tm-475-holiday
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-md-4 col-sm-3 tm-site-name-container">
-					<a href="#" class="tm-site-name">Admin</a>	
+					<a href="#" class="tm-site-name"><%- hos %></a>	
 				</div>
 				<div class="col-lg-6 col-md-8 col-sm-9">
 					<div class="mobile-menu-icon">
 						<i class="fa fa-bars"></i>
 					</div>
-					<nav class="tm-nav">
+					<nav class="tm-nav" style="margin-left: -100px;">
 						<ul>
-							<li><a href="admin">Issues</a></li>
-							<li><a href="mealcounts">Meal Count</a></li>
+							<li><a href="home">Home</a></li>
+							<li><a href="issues">Issues</a></li>
+							<li><a href="contacts">Contacts</a></li>
+							<li><a href="profile" class="active">Profile</a></li>
 							<li><a href="logout">Logout</a></li>
 						</ul>
 					</nav>
@@ -46,27 +48,19 @@ http://www.templatemo.com/tm-475-holiday
 			</div>
 		</div>
 	</div>
-	<center>
-		<form action="admin" method="post">
-			<input type="submit" value="Show Issues"/>
-		</form>
-	</center>
-	<%if(users!=undefined) {%>
-	<table width="1000px" align="center" class="thetab">
-      <tr class="thetabcol">
-        <th>Redg No</th>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Date</th>
-      </tr>
-      <% for(var i=0; i < users.length; i++) { %>
-      <tr>
-       <td><%= users[i].regno %></td>
-       <td><%= users[i].type %></td>
-       <td><%= users[i].description %></td>
-       <td><%= users[i].date %></td>
-      </tr>
-      <% } } %>
-</table>
+	 <div id="myDIV" class="header">
+  <h2>My Profile</h2>
+  <input type="text" id="myInput" placeholder="Title...">
+  <span onclick="newElement()" class="addBtn">Add</span>
+</div>
+
+<ul id="myUL">
+	  <li><%- pro.name %></li>
+	  <li class="checked">Pay bills</li>
+	  <li>Meet George</li>
+	  <li>Buy eggs</li>
+	  <li>Read a book</li>
+	  <li>Organize office</li>
+</ul> 
  </body>
  </html>
