@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var issueModel = require('../model/issues')
+var issueModel = require('../model/issues');
 
 var issueSave = (req,res) => {
   if (req.session.user.gender=="Male") {

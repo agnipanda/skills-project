@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 var signModel = require('../model/signup');
+var issueModel = require('../model/issues');
 
 var logUser=function(req,res){
   	if(req.body.logid=="admin" && req.body.logpass=="admin123"){
@@ -32,4 +33,16 @@ var logUser=function(req,res){
 }
 };
 
-module.exports = {"logUser":logUser};
+var issue=function(req,res){
+ 	issueModel.find({}, function(err, docs) {
+	    if (!err){ 
+	        console.log(docs);
+	    }
+	    else {
+	    	throw err;
+	    }
+	    res.render('admin',{users:docs});
+	});
+};
+
+module.exports = {"logUser":logUser,"issue":issue};

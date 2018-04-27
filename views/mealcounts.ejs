@@ -38,7 +38,7 @@ http://www.templatemo.com/tm-475-holiday
 					<nav class="tm-nav">
 						<ul>
 							<li><a href="admin">Issues</a></li>
-							<li><a href="mealcounts">Meal Count</a></li>
+							<li><a href="mealcounts" class="active">Meal Count</a></li>
 							<li><a href="logout">Logout</a></li>
 						</ul>
 					</nav>
@@ -46,26 +46,6 @@ http://www.templatemo.com/tm-475-holiday
 			</div>
 		</div>
 	</div>
-
-	<form action="admin" method="post">
-		<input type="submit" value="Show Issues"/>
-	</form>
-	<%if(users!=undefined) {%>
-	<table width="1000px" align="center" class="thetab">
-      <tr class="thetabcol" style="position: relative;">
-        <th>Redg No</th>
-        <th>Type</th>
-        <th>Date</th>
-        <th>Description</th>
-      </tr>
-      <% for(var i=0; i < users.length; i++) { %>
-      <tr>
-        <td><%= users[i].regno %></td>
-       <td><%= users[i].type %></td>
-       <td><%= users[i].date %></td>
-       <td><%= users[i].description %></td>
-      </tr>
-      <% } } %>
-</table>
+	<p></p>
  </body>
  </html>

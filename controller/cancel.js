@@ -9,15 +9,19 @@ var cancelAmount=function(req,res){
 	var curr_date = date.getDate();
 	var curr_month = date.getMonth();
 	var curr_year = date.getFullYear();
+	var bs="ON",ls="ON",ds="ON";
 	date2=curr_date + "-" + m_names[curr_month] + "-" + curr_year;
 	if(c.breakfast){
 		bf+=25;
+		bs="OFF"
 	}
 	if(c.lunch){
 		l+=25;
+		ls="OFF"
 	}
 	if(c.dinner){
 		d+=25;
+		ds="OFF"
 	}
 	signModel.findOne({regno:req.session.user.regno},function(err,user){
 		if(user.date == date2){
@@ -44,6 +48,9 @@ var cancelAmount=function(req,res){
 		  		}
 		  		else{
 		  			console.log(numAffected);
+		  			req.session.bs=bs;
+					req.session.ls=ls;
+					req.session.ds=ds;
 		  			res.redirect('/home');
 		  		}
 			};
