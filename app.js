@@ -1,6 +1,5 @@
 var express = require('express');
 var path = require('path');
-var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
@@ -10,7 +9,7 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var app = express();
 var session = require('express-session');
-mongoose.connect('mongodb://localhost:27017/mydb2');
+mongoose.connect('mongodb://skill:skills@ds261429.mlab.com:61429/skill-project');
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
